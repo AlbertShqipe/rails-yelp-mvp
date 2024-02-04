@@ -1,0 +1,8 @@
+<div class="container mt-5">
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.select :category, Category: %w[chinese italian japanese french belgian] %>
+    <%= f.submit %>
+  <% end %>
+</div>
