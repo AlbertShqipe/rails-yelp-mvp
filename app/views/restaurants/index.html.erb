@@ -1,7 +1,16 @@
-<div class="text-center container">
-  <h1>All Restaurants</h1>
-  <%@restaurants.each do |r| %>
-    <h5><%= link_to "#{r.name}", restaurant_path(r) %><h5>
-  <% end %>
-  <%= link_to "Add a new restaurant", new_restaurant_path %>
+<div class="container">
+  <h1>Restaurants</h1>
+
+  <div id="restaurants">
+    <% @restaurants.each do |restaurant| %>
+      <%= restaurant.name %>
+      <p>
+        <%= link_to "Show this restaurant", restaurant %>
+        <br>
+        <%= link_to "Add review", new_restaurant_review_path(restaurant) %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "New restaurant", new_restaurant_path %>
 </div>
